@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GreenLog - Check-ins</title>
+
+    <link rel="stylesheet" href="/style.css?v=2">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">🌱 GreenLog</div>
+
+        <div class="nav-links">
+
+            <a href="/">Dashboard</a>
+            <a href="/volunteers">Volunteers</a>
+            <a href="/plantation-drives">Drives</a>
+            <a href="/trees">Trees</a>
+            <a href="/check-ins">Check-ins</a>
+
+        </div>
+
+    </nav>
+
+    <main class="container">
+
+        <div class="page-header">
+
+            <h1>Tree Survival Check-ins</h1>
+
+        </div>
+
+        <div class="card form-card">
+
+            <h2 class="section-title">
+                Record Check-in
+            </h2>
+
+            <div id="message" class="message"></div>
+
+            <form onsubmit="addCheckin(event)">
+
+                <div class="form-group">
+
+                    <label>Check-in Date</label>
+
+                    <input type="date" id="checkInDate" required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Tree Survival Status</label>
+
+                    <select id="alive" required>
+
+                    <option value="true">
+                        Alive
+                    </option>
+
+                    <option value="false">
+                        Not Alive
+                    </option>
+
+                </select>
+
+                </div>
+
+                <div class="form-group">
+                    <label>Tree</label>
+                    <select id="treeId" required></select>
+                </div>
+
+                <div class="form-group">
+                    <label>Volunteer</label>
+                    <select id="volunteerId" required></select>
+                </div>
+
+                <button class="btn btn-primary" type="submit">
+
+                Record Check-in
+
+            </button>
+
+            </form>
+
+        </div>
+
+        <div class="card">
+
+            <h2 class="section-title">
+                Check-in Records
+            </h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>ID</th>
+                        <th>Date</th>
+                        <th>Survival Status</th>
+                        <th>Volunteer</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="checkinTable"></tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+    <script src="/log.js?v=2"></script>
+
+</body>
+
+</html>

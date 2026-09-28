@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GreenLog - Trees</title>
+
+    <link rel="stylesheet" href="/style.css?v=2">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">🌱 GreenLog</div>
+
+        <div class="nav-links">
+
+            <a href="/">Dashboard</a>
+            <a href="/volunteers">Volunteers</a>
+            <a href="/plantation-drives">Drives</a>
+            <a href="/trees">Trees</a>
+            <a href="/check-ins">Check-ins</a>
+
+        </div>
+
+    </nav>
+
+    <main class="container">
+
+        <div class="page-header">
+
+            <h1>Tree Tracking</h1>
+
+        </div>
+
+        <div class="card form-card">
+
+            <h2 class="section-title">
+                Register Tree
+            </h2>
+
+            <div id="message" class="message"></div>
+
+            <form onsubmit="addTree(event)">
+
+                <div class="form-group">
+
+                    <label>Species</label>
+
+                    <input type="text" id="species" required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Planting Date</label>
+
+                    <input type="date" id="plantedDate" required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Latitude</label>
+
+                    <input type="text" id="latitude" required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Longitude</label>
+
+                    <input type="text" id="longitude" required>
+
+                </div>
+
+                <div class="form-group">
+                    <label>Drive</label>
+                    <select id="driveId" required></select>
+                </div>
+
+                <div class="form-group">
+                    <label>Volunteer</label>
+                    <select id="volunteerId" required></select>
+                </div>
+
+                <button class="btn btn-primary" type="submit">
+
+                Register Tree
+
+            </button>
+
+            </form>
+
+        </div>
+
+        <div class="card">
+
+            <h2 class="section-title">
+                Registered Trees
+            </h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>ID</th>
+                        <th>Species</th>
+                        <th>Planting Date</th>
+                        <th>Latitude</th>
+                        <th>Longitude</th>
+                        <th>Status</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="treeTable"></tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+    <script src="/log.js?v=2"></script>
+
+</body>
+
+</html>
